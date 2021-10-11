@@ -1,38 +1,38 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User_game_biodata', {
+    await queryInterface.createTable("User_game_biodata", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'User_games',
-            schema: 'public'
+            tableName: "User_games",
+            schema: "public",
           },
-          key: 'id'
+          key: "id",
         },
-        allowNull: false
+        allowNull: false,
       },
       nama: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('User_game_biodata');
-  }
+    await queryInterface.dropTable("User_game_biodata");
+  },
 };

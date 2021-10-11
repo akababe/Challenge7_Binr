@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class User_game_biodata extends Model {
@@ -12,17 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.User_game, {
-        foreignKey: 'user_id',
-        onDelete: 'CASECADE'
+        foreignKey: "user_id",
+        onDelete: "CASECADE",
       });
     }
-  };
-  User_game_biodata.init({
-    user_id: DataTypes.INTEGER,
-    nama: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'User_game_biodata',
-  });
+  }
+  User_game_biodata.init(
+    {
+      user_id: DataTypes.INTEGER,
+      nama: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "User_game_biodata",
+    }
+  );
   return User_game_biodata;
 };

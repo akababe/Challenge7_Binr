@@ -1,1 +1,6 @@
-[{"nama":"almas","email":"almas689@gmail.com","password":"123","hak_akses":"user"},{"nama":"almas","email":"almas123@gmail.com","password":"123","hak_akses":"superuser"}]
+[
+  {
+    "email": "beruang",
+    "password": "12345"
+  }
+]
